@@ -3,7 +3,10 @@ package ru.mirsaitov.tm;
 import java.util.ResourceBundle;
 import ru.mirsaitov.tm.constant.TerminalConst;
 
-public class Main {
+/**
+ * task-manager application
+ */
+public class App {
 
     public static void main(String[] args) {
         displayWelcome();
@@ -39,5 +42,5 @@ public class Main {
         ResourceBundle bundle = ResourceBundle.getBundle("MessagesBundle");
         System.out.println(bundle.getString("welcome"));
     }
-    
+
 }
