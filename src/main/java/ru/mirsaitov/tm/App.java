@@ -1,6 +1,8 @@
 package ru.mirsaitov.tm;
 
 import java.util.ResourceBundle;
+import java.util.Scanner;
+
 import ru.mirsaitov.tm.constant.TerminalConst;
 
 /**
@@ -8,18 +10,50 @@ import ru.mirsaitov.tm.constant.TerminalConst;
  */
 public class App {
 
+    /**
+     * PSVM
+     */
     public static void main(String[] args) {
         displayWelcome();
-        run(args);
+        run();
     }
 
-    public static void run(String[] args) {
-        if (args == null || args.length < 1) {
-            return;
+    /**
+     * Main loop of program
+     */
+    public static void run() {
+        Scanner scanner = new Scanner(System.in);
+        String command;
+        while (scanner.hasNextLine()) {
+            command = scanner.nextLine();
+            if (!process(command)) {
+                break;
+            }
         }
-        displayArgument(args[0]);
     }
 
+    /**
+     * Process of input parameter
+     * @command parameter
+     * @return true - wait next parameter, false - exit programm
+     */
+    public static boolean process(String command) {
+        if (command == null || command.isEmpty()) {
+            return true;
+        }
+
+        if (TerminalConst.CMD_EXIT.equals(command)) {
+            return false;
+        }
+
+        displayArgument(command);
+        return true;
+    }
+
+    /**
+     * Print to System.out result of parameter
+     * @arg parameter
+     */
     public static void displayArgument(final String arg) {
         ResourceBundle bundle = ResourceBundle.getBundle("MessagesBundle");
         switch (arg) {
@@ -38,6 +72,9 @@ public class App {
         }
     }
 
+    /**
+     * Welcome information
+     */
     public static void displayWelcome() {
         ResourceBundle bundle = ResourceBundle.getBundle("MessagesBundle");
         System.out.println(bundle.getString("welcome"));
