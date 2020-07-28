@@ -27,3 +27,7 @@ java -jar task-manager-1.0.6.jar
 # 5. Contact information
 
 Grigorii Mirsaitov (mirsaitov_gr@nlmk.com)
+
+# 6. Mirror repository
+
+https://github.com/Volan/jse
