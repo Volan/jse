@@ -21,7 +21,7 @@ mvn clean install
 ## 4.2 Run application
 
 ```cmd
-java -jar task-manager-1.0.0.jar
+java -jar task-manager-1.0.6.jar
 ```
 
 # 5. Contact information

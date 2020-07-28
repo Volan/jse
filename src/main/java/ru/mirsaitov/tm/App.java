@@ -6,12 +6,12 @@ import java.util.Scanner;
 import ru.mirsaitov.tm.constant.TerminalConst;
 
 /**
- * task-manager application
+ * Task-manager application
  */
 public class App {
 
     /**
-     * PSVM
+     * Entry point of programms
      */
     public static void main(String[] args) {
         displayWelcome();
@@ -34,6 +34,7 @@ public class App {
 
     /**
      * Process of input parameter
+     *
      * @command parameter
      * @return true - wait next parameter, false - exit programm
      */
@@ -52,6 +53,7 @@ public class App {
 
     /**
      * Print to System.out result of parameter
+     *
      * @arg parameter
      */
     public static void displayArgument(final String arg) {

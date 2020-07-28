@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.mirsaitov.tm</groupId>
     <artifactId>task-manager</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.6</version>
 
     <name>task-manager</name>
     <url>http://www.example.com</url>
