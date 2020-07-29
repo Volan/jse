@@ -27,17 +27,19 @@ public class AppTest {
 
     @Test
     public void shouldExecute() {
-        assertTrue(App.process(TerminalConst.CMD_ABOUT));
-        assertTrue(App.process(TerminalConst.CMD_HELP));
-        assertTrue(App.process(TerminalConst.CMD_VERSION));
-        assertTrue(App.process("TEST"));
-        assertTrue(App.process(null));
-        assertTrue(App.process(new String()));
+        App app = new App();
+        assertTrue(app.process(TerminalConst.CMD_ABOUT));
+        assertTrue(app.process(TerminalConst.CMD_HELP));
+        assertTrue(app.process(TerminalConst.CMD_VERSION));
+        assertTrue(app.process("TEST"));
+        assertTrue(app.process(null));
+        assertTrue(app.process(new String()));
     }
 
     @Test
     public void shouldNotExecute() {
-        assertFalse(App.process(TerminalConst.CMD_EXIT));
+        App app = new App();
+        assertFalse(app.process(TerminalConst.CMD_EXIT));
     }
 
     @Test
@@ -49,19 +51,19 @@ public class AppTest {
         try {
             //about test
             System.setIn(new ByteArrayInputStream((TerminalConst.CMD_ABOUT).getBytes()));
-            App.run();
+            new App().run();
             assertEquals(outContent.toString(), bundle.getString("about") + System.lineSeparator());
 
             //help test
             outContent.reset();
             System.setIn(new ByteArrayInputStream((TerminalConst.CMD_HELP).getBytes()));
-            App.run();
+            new App().run();
             assertEquals(outContent.toString(), bundle.getString("help") + System.lineSeparator());
 
             //version test
             outContent.reset();
             System.setIn(new ByteArrayInputStream((TerminalConst.CMD_VERSION).getBytes()));
-            App.run();
+            new App().run();
             assertEquals(outContent.toString(), bundle.getString("version") + System.lineSeparator());
         } finally {
             System.setIn(stdin);

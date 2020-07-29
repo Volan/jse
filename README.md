@@ -21,13 +21,26 @@ mvn clean install
 ## 4.2 Run application
 
 ```cmd
-java -jar task-manager-1.0.6.jar
+java -jar task-manager-1.0.7.jar
 ```
 
-# 5. Contact information
+# 5. Supported commands
+
+version - Display program version. \
+about - Display developer info. \
+help - Display list of terminal commands. \
+project-create [NAME] [DESCRIPTION] - Create project. \
+project-clear - Clear projects. \
+project-list - Display list of projects. \
+task-create [NAME] [DESCRIPTION] - Create task. \
+task-clear - Clear tasks. \
+task-list - Display list of tasks. \
+exit - Exit. 
+
+# 6. Contact information
 
 Grigorii Mirsaitov (mirsaitov_gr@nlmk.com)
 
-# 6. Mirror repository
+# 7. Mirror repository
 
 https://github.com/Volan/jse
